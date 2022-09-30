@@ -42,7 +42,7 @@ class JMSJobQueueExtension extends Extension implements PrependExtensionInterfac
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
         $loader->load('console.xml');
 
@@ -66,8 +66,7 @@ class JMSJobQueueExtension extends Extension implements PrependExtensionInterfac
             'dbal' => array(
                 'types' => array(
                     'jms_job_safe_object' => array(
-                        'class' => SafeObjectType::class,
-                        'commented' => true,
+                        'class' => SafeObjectType::class
                     )
                 )
             )
